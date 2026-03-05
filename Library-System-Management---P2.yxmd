@@ -1,0 +1,1126 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2025.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1182" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User\AppData\Local\Temp\Alteryx\Engine_2368_394ecf585d904d88be24f78c784c6e3d_\Engine_2368_f7c23a01386544cc9ea5300c5b075461~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1182" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User\AppData\Local\Temp\Alteryx\Engine_2368_394ecf585d904d88be24f78c784c6e3d_\Engine_2368_2d178fad2185438da8721909d663f7d0~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1182" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\User\AppData\Local\Temp\Alteryx\Engine_2368_394ecf585d904d88be24f78c784c6e3d_\Engine_2368_5bef064ba4b5454883e6f12e1b9c05cb~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeDiff(DateTimeNow(), [issued_date], &quot;days&quot;)" field="Days_Overdue" size="1073741823" type="V_WString" enabled="true" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <AnnotationText><![CDATA[Days_Overdue = DateTimeDiff(DateTimeNow(), [issued_date], "days")
+]]></AnnotationText>
+          <DefaultAnnotationText><![CDATA[Days_Overdue = DateTimeDiff(DateTimeNow(), [issued_date], "days")
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="966" y="522" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>ToNumber([Days_Overdue]) &gt; 20 AND IsNull([return_date])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>ToNumber([Days_Overdue]) &gt; 20 AND IsNull([return_date])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="39">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="870" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Count of issued_id]&gt; 1</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="2">
+          <Name />
+          <DefaultAnnotationText>[Count of issued_id]&gt; 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="53" y="54" width="151" height="537" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>books
+members
+employees
+branch
+issues_status
+return_status</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>books
+members
+employees
+branch
+issues_status
+return_status</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="7">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="507" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <Query />
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <Table>"public"."return_status"</Table>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId" DcmTitle="PostgreSQL ODBC — Username and password" DcmSchemaId="database-odbc-dsn-postgresql">b83fb71d-9833-4814-ac24-3a0931d1ef72</Connection>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="2">
+              <Name />
+              <DefaultAnnotationText>dcm:PostgreSQL ODBC — Username and password
+Table="public"."return_status"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="return_id" size="25" source="File: &quot;public&quot;.&quot;return_status&quot;" type="V_WString" />
+                <Field name="issued_id" size="25" source="File: &quot;public&quot;.&quot;return_status&quot;" type="V_WString" />
+                <Field name="return_book_name" size="75" source="File: &quot;public&quot;.&quot;return_status&quot;" type="V_WString" />
+                <Field name="return_date" source="File: &quot;public&quot;.&quot;return_status&quot;" type="Date" />
+                <Field name="return_book_isbn" size="20" source="File: &quot;public&quot;.&quot;return_status&quot;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="6">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="435" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <Query />
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <Table>"public"."issues_status"</Table>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId" DcmTitle="PostgreSQL ODBC — Username and password" DcmSchemaId="database-odbc-dsn-postgresql">b83fb71d-9833-4814-ac24-3a0931d1ef72</Connection>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="2">
+              <Name />
+              <DefaultAnnotationText>dcm:PostgreSQL ODBC — Username and password
+Table="public"."issues_status"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="issued_id" size="10" source="File: &quot;public&quot;.&quot;issues_status&quot;" type="V_WString" />
+                <Field name="issued_member_id" size="10" source="File: &quot;public&quot;.&quot;issues_status&quot;" type="V_WString" />
+                <Field name="issued_book_name" size="75" source="File: &quot;public&quot;.&quot;issues_status&quot;" type="V_WString" />
+                <Field name="issued_date" source="File: &quot;public&quot;.&quot;issues_status&quot;" type="Date" />
+                <Field name="issued_book_isbn" size="25" source="File: &quot;public&quot;.&quot;issues_status&quot;" type="V_WString" />
+                <Field name="issued_emp_id" size="10" source="File: &quot;public&quot;.&quot;issues_status&quot;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="5">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="78" y="375" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <Query />
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <Table>"public"."branch"</Table>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId" DcmTitle="PostgreSQL ODBC — Username and password" DcmSchemaId="database-odbc-dsn-postgresql">b83fb71d-9833-4814-ac24-3a0931d1ef72</Connection>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="2">
+              <Name />
+              <DefaultAnnotationText>dcm:PostgreSQL ODBC — Username and password
+Table="public"."branch"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="branch_id" size="10" source="File: &quot;public&quot;.&quot;branch&quot;" type="V_WString" />
+                <Field name="manager_id" size="10" source="File: &quot;public&quot;.&quot;branch&quot;" type="V_WString" />
+                <Field name="branch_address" size="55" source="File: &quot;public&quot;.&quot;branch&quot;" type="V_WString" />
+                <Field name="contact_no" size="25" source="File: &quot;public&quot;.&quot;branch&quot;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="4">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="314" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <Query />
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <Table>"public"."employees"</Table>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId" DcmTitle="PostgreSQL ODBC — Username and password" DcmSchemaId="database-odbc-dsn-postgresql">b83fb71d-9833-4814-ac24-3a0931d1ef72</Connection>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="2">
+              <Name />
+              <DefaultAnnotationText>dcm:PostgreSQL ODBC — Username and password
+Table="public"."employees"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="emp_id" size="10" source="File: &quot;public&quot;.&quot;employees&quot;" type="V_WString" />
+                <Field name="emp_name" size="25" source="File: &quot;public&quot;.&quot;employees&quot;" type="V_WString" />
+                <Field name="position" size="25" source="File: &quot;public&quot;.&quot;employees&quot;" type="V_WString" />
+                <Field name="salary" source="File: &quot;public&quot;.&quot;employees&quot;" type="Int32" />
+                <Field name="branch_id" size="25" source="File: &quot;public&quot;.&quot;employees&quot;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="2">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <Query />
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <Table>"public"."members"</Table>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId" DcmTitle="PostgreSQL ODBC — Username and password" DcmSchemaId="database-odbc-dsn-postgresql">b83fb71d-9833-4814-ac24-3a0931d1ef72</Connection>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="2">
+              <Name />
+              <DefaultAnnotationText>dcm:PostgreSQL ODBC — Username and password
+Table="public"."members"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="member_id" size="20" source="File: &quot;public&quot;.&quot;members&quot;" type="V_WString" />
+                <Field name="member_name" size="25" source="File: &quot;public&quot;.&quot;members&quot;" type="V_WString" />
+                <Field name="member_address" size="77" source="File: &quot;public&quot;.&quot;members&quot;" type="V_WString" />
+                <Field name="reg_date" source="File: &quot;public&quot;.&quot;members&quot;" type="Date" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+        <Node ToolID="1">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+            <Position x="79" y="183" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Passwords />
+              <File />
+              <FormatSpecificOptions UseDcm="true" Format="23" RecordLimit="">
+                <Query />
+                <TableStyle>Quoted</TableStyle>
+                <CacheData>False</CacheData>
+                <Table>"public"."books"</Table>
+                <SessionReadOnly>True</SessionReadOnly>
+                <ReadUncommitted>False</ReadUncommitted>
+                <Connection DcmType="ConnectionId" DcmTitle="PostgreSQL ODBC — Username and password" DcmSchemaId="database-odbc-dsn-postgresql">b83fb71d-9833-4814-ac24-3a0931d1ef72</Connection>
+                <NoProgress>True</NoProgress>
+                <PostSQL />
+                <PreSQLOnConfig>True</PreSQLOnConfig>
+                <PreSQL />
+              </FormatSpecificOptions>
+            </Configuration>
+            <Annotation DisplayMode="2">
+              <Name />
+              <DefaultAnnotationText>dcm:PostgreSQL ODBC — Username and password
+Table="public"."books"</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field description="PrimaryKey" name="isbn" size="20" source="File: &quot;public&quot;.&quot;books&quot;" type="V_WString" />
+                <Field name="book_title" size="75" source="File: &quot;public&quot;.&quot;books&quot;" type="V_WString" />
+                <Field name="category" size="25" source="File: &quot;public&quot;.&quot;books&quot;" type="V_WString" />
+                <Field name="rental_price" source="File: &quot;public&quot;.&quot;books&quot;" type="Double" />
+                <Field name="status" size="15" source="File: &quot;public&quot;.&quot;books&quot;" type="V_WString" />
+                <Field name="author" size="35" source="File: &quot;public&quot;.&quot;books&quot;" type="V_WString" />
+                <Field name="publisher" size="50" source="File: &quot;public&quot;.&quot;books&quot;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="42">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="269" y="53" width="193" height="457" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Select Tools</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Select Tools</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="14">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="162" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="15">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="234" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="16">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="294" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="17">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="18">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="294" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="19">
+          <GuiSettings>
+            <Position x="378" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Value name="Check Box (135)">False</Value>
+              <Value name="Check Box (136)">True</Value>
+              <Value name="List Box (11)">"return_book_name","return_book_isbn"</Value>
+              <Value name="Check Box (84)">True</Value>
+              <Value name="Check Box (117)">True</Value>
+              <Value name="Check Box (15)">True</Value>
+              <Value name="Check Box (109)">False</Value>
+              <Value name="Check Box (122)">False</Value>
+              <Value name="Check Box (53)">False</Value>
+              <Value name="Check Box (58)">False</Value>
+              <Value name="Check Box (70)">False</Value>
+              <Value name="Check Box (77)">False</Value>
+              <Value name="Drop Down (81)">upper</Value>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings Macro="Cleanse.yxmc" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="701" y="49" width="174" height="581" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption><![CDATA[SsummarizeTools
+]]></Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[SsummarizeTools
+]]></AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="37">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="726" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="rental_price" action="Sum" rename="Sum_rental_price" />
+                <SummarizeField field="issued_id" action="Count" rename="Count of issued_id" />
+                <SummarizeField field="category" action="GroupBy" rename="category" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="726" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="issued_member_id" action="GroupBy" rename="issued_member_id" />
+                <SummarizeField field="issued_id" action="Count" rename="Count of issued_id" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+        <Node ToolID="40">
+          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+            <Position x="738" y="546" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <SummarizeFields>
+                <SummarizeField field="branch_id" action="GroupBy" rename="branch_id" />
+                <SummarizeField field="issued_id" action="Count" rename="Count_issue_id" />
+                <SummarizeField field="return_id" action="Count" rename="Count_return_id" />
+                <SummarizeField field="rental_price" action="Sum" rename="Sum_rental_price" />
+              </SummarizeFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="43">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="509" y="53" width="121" height="445" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Joins</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Joins</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="20">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="546" y="102" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="issued_book_isbn" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="isbn" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="22">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="546" y="186" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="issued_member_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="member_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="25">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="546" y="270" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="issued_emp_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="emp_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="27">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="534" y="342" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="branch_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="branch_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_branch_id" selected="True" rename="Right_branch_id" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+        <Node ToolID="29">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+            <Position x="546" y="414" />
+          </GuiSettings>
+          <Properties>
+            <Configuration joinByRecordPos="False">
+              <JoinInfo connection="Left">
+                <Field field="issued_id" />
+              </JoinInfo>
+              <JoinInfo connection="Right">
+                <Field field="issued_id" />
+              </JoinInfo>
+              <SelectConfiguration>
+                <Configuration outputConnection="Join">
+                  <OrderChanged value="False" />
+                  <CommaDecimal value="False" />
+                  <SelectFields>
+                    <SelectField field="Right_issued_id" selected="True" rename="Right_issued_id" input="Right_" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+              </SelectConfiguration>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1373" y="49" width="167" height="601" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption><![CDATA[Output
+]]></Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText><![CDATA[Output
+]]></AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1398" y="534" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">C:\Users\User\Desktop\Library-System-Management---P2\Alteryx output\Rental_sum.xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <MipTenantId />
+                <PreserveFormat>False</PreserveFormat>
+                <MipSensitivity />
+                <UNCLocal>False</UNCLocal>
+                <SkipFieldNames>False</SkipFieldNames>
+                <SuppressBlankFile>False</SuppressBlankFile>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Rental_sum.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1410" y="114" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">C:\Users\User\Desktop\Library-System-Management---P2\Alteryx output\Book_category_rentalprice.xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <MipTenantId />
+                <PreserveFormat>False</PreserveFormat>
+                <MipSensitivity />
+                <UNCLocal>False</UNCLocal>
+                <SkipFieldNames>False</SkipFieldNames>
+                <SuppressBlankFile>False</SuppressBlankFile>
+                <OutputOption>RemoveFile</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Book_category_rentalprice.xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="46">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1398" y="426" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="25">C:\Users\User\Desktop\Library-System-Management---P2\Alteryx output\Members with Multiple Issues (Filter after Count).xlsx|||Sheet1</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <MipTenantId />
+                <PreserveFormat>False</PreserveFormat>
+                <MipSensitivity />
+                <UNCLocal>False</UNCLocal>
+                <SkipFieldNames>False</SkipFieldNames>
+                <SuppressBlankFile>False</SuppressBlankFile>
+                <OutputOption>Overwrite</OutputOption>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Members with Multiple Issues (Filter after Count).xlsx
+Query=Sheet1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="35" Connection="Output" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="39" Connection="True" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="29" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="29" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="27" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Join" />
+      <Destination ToolID="27" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Join" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="20" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="20" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="22" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="22" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="19" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="37" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="39" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="40" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Join" />
+      <Destination ToolID="37" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Join" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Join" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Join" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Join" />
+      <Destination ToolID="40" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <DefaultTZ value="Local" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <IsTemplate value="False" />
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Library-System-Management---P2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b57175d2-e529-4294-9f1d-9e8ca57fee01" />
+      <Telemetry>
+        <PreviousWorkflowId value="f3744f4f-5cf3-4607-96ee-606d8a79a585" />
+        <OriginWorkflowId value="f3744f4f-5cf3-4607-96ee-606d8a79a585" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
